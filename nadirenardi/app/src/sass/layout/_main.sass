@@ -1,0 +1,175 @@
+html
+  font-size: 10px
+  +_media-sm-up
+    font-size: 13px
+  +_media-lg-up
+    font-size: 10px
+  overflow: auto
+body
+  margin: 0
+  padding: 30px 0 0 0
+  font-size: 1.4rem
+  font-family: $def-font
+  font-weight: normal
+  color: $def-color
+  overflow: auto
+  &.hidden
+    overflow: hidden
+  +_media-xs-up
+    padding: 43px 0 0 0
+  +_media-lg-up
+    padding: 0
+div,
+input,
+form,
+section,
+main,
+header,
+footer,
+select,
+button,
+textarea
+  box-sizing: border-box
+
+p,h1,h2,h3,h4,h5,h6
+  margin: 0
+a
+  outline: 0
+  color: $def-color
+  text-decoration: none
+  transition: $def-transition
+  +_media-lg-up
+    &:hover
+      color: $orange
+input,select,textarea
+  outline: 0
+  -webkit-appearance: none
+  width: 100%
+
+button
+  background: none
+  outline: 0
+  -webkit-appearance: none
+  border: 0
+  padding: 0
+  transition: $def-transition
+
+ul
+  margin: 0
+  li
+    list-style: none
+
+.wrapper
+  padding: 0 10px
+  +_media-lg-up
+    padding: 0 50px
+img
+  max-width: 100%
+//js detect device
+#js-mobile
+  display: block
+  +_media-sm-up
+    display: none
+#js-tablet
+  display: none
+  +_media-sm-up
+    display: block
+  +_media-lg-up
+    display: none
+#js-desktop
+  display: none
+  +_media-lg-up
+    display: block
+
+.flex
+  display: flex
+  &--a-center
+    align-items: center
+  &--a-bottom
+    align-items: flex-end
+  &--a-top
+    align-items: flex-start
+  &--j-center
+    justify-content: center
+  &--j-left
+    justify-content: flex-start
+  &--j-right
+    justify-content: flex-end
+  &--j-space
+    justify-content: space-between
+  &--xs-block
+    +_media-xs-down
+      display: block
+
+.text-center
+  text-align: center
+
+
+h1.section-title,
+h2.section-title,
+h3.section-title,
+h4.section-title,
+h5.section-title,
+h6.section-title,
+.section-title
+  font-size: 2.5rem
+  font-weight: 300
+  display: block
+  text-align: center
+  margin: 45px 0 25px
+  text-transform: uppercase
+
+
+
+.owl-dots
+  text-align: center
+  width: 100%
+  +_media-lg-down
+    margin: 20px 0
+  .owl-dot
+    display: inline-block
+    margin: 0 5px
+    vertical-align: middle
+  span
+    display: block
+    width: 1.2rem
+    height: 1.2rem
+    background: grey
+    border-radius: 50%
+    opacity: .5
+    transition: $def-transition
+    +_media-sm-up
+      width: 1.7rem
+      height: 1.7rem
+    +_media-lg-up
+      &:hover
+        opacity: 1
+  .active
+    span
+      background: $orange
+      width: 1.5rem
+      height: 1.5rem
+      opacity: 1
+      +_media-sm-up
+        width: 2rem
+        height: 2rem
+.slider-arrows
+  font-size: 7rem
+.owl-nav
+  &>div
+    color: #d4d4d4
+    position: absolute
+    top: 38%
+    transition: $def-transition
+    &:hover
+      color: $def-color
+  .owl-prev
+    left: -3%
+  .owl-next
+    right: -3%
+
+.btn-orange
+  background: $orange
+  color: white
+  &:hover
+    background: darken($orange,10)

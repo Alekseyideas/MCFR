@@ -1,0 +1,152 @@
+.header
+  background: white
+  padding-top: 10px
+  position: fixed
+  width: 100%
+  left: 0
+  top: 0
+  z-index: 2
+  +_media-lg-down
+    box-shadow: 0 0 20px rgba(black,0.3)
+    padding-bottom: 10px
+  +_media-lg-up
+    padding-top: 25px
+    position: relative
+  .btn-menu
+    width: 40px
+    min-height: 40px
+    +_media-lg-up
+      display: none
+    &__line
+      margin: 0 0 10px 0
+      height: 2px
+      width: 100%
+      display: block
+      background: $def-color
+      transition: .2s
+      &:last-child
+        margin: 0
+    &.active
+      margin-top: -10px
+      .btn-menu
+        &__line
+          margin: 0
+          &:nth-child(1)
+            transform: rotate(45deg)
+          &:nth-child(2)
+            display: none
+          &:nth-child(3)
+            transform: rotate(-45deg)
+            margin-top: -1px
+  .wrapper
+    &>.flex
+      align-items: center
+      +_media-lg-up
+        align-items: flex-start
+  &__shops,
+  &__search
+    width: 140px
+    display: none
+    +_media-lg-up
+      display: flex
+  &__search
+    margin-top: 20px
+    border-bottom: 1px solid #b2b2b2
+    input
+      border: 0
+      height: 20px
+      font-size: 1.2rem
+      font-weight: 300
+      &::placeholder
+        color: #b2b2b2
+    button
+      font-size: 1.8rem
+      height: 20px
+      &:hover
+        color: $orange
+  &__logo
+    display: block
+    max-width: 190px
+    margin: auto
+    +_media-lg-up
+      max-width: 320px
+      &:hover
+        opacity: .7
+  &__right-side
+    max-width: 90px
+    width: 100%
+    height: 40px
+    +_media-sm-up
+      max-width: 130px
+    +_media-lg-up
+      max-width: 233px
+  &__icon
+    position: relative
+    font-size: 2.2rem
+    display: none
+    +_media-lg-up
+      display: block
+    &--cart
+      font-size: 2.4rem
+      margin-right: 20px
+    .count
+      position: absolute
+      background: $orange
+      color: white
+      font-size: 1rem
+      width: 2rem
+      height: 2rem
+      border-radius: 50%
+      left: 100%
+      top: 100%
+      margin-top: -1rem
+      margin-left: -.5rem
+      text-align: center
+      line-height: 2rem
+  &__select
+    position: relative
+    font-size: 1.5rem
+    cursor: pointer
+    transition: $def-transition
+    &--currency
+      text-transform: uppercase
+    +_media-lg-up
+      &:hover
+        color: $orange
+        .header__select-items
+          display: block
+
+    ion-icon
+      margin-left: 5px
+  &__select-items
+    position: absolute
+    top: 100%
+    left: 0
+    display: none
+    &.active
+      +_media-lg-down
+        position: fixed
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        width: 100%
+        height: 100%
+        background: rgba(black,.9)
+        top: 0
+        left: 0
+        z-index: 2
+    a
+      display: block
+      margin: 5px 0
+      +_media-lg-down
+        font-size: 3rem
+        color: white
+        padding: 20px 0
+        border-bottom: 1px solid rgba(white,.2)
+        width: 100%
+
+      &.active
+        display: none
+
+

@@ -1,0 +1,51 @@
+.subscription
+  margin-bottom: 40px
+  +_media-md-down
+    margin-top: 30px
+  img
+    margin: 0 0 0 20px
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    +_media-md-down
+      display: block
+      text-align: center
+  &__form
+    display: flex
+    align-items: center
+    +_media-md-down
+      display: block
+    input
+      height: 44px
+      min-width: 309px
+      background: #ededed
+      margin-left: 20px
+      padding: 10px
+      font-weight: 300
+      +_media-md-down
+        margin: 20px 0
+  .from-group
+    +_media-md-down
+      display: inline-block
+      vertical-align: middle
+      width: 80%
+  &__form-btn
+    font-size: 2rem
+    height: 44px
+    width: 44px
+    +_media-md-down
+      display: inline-block
+      vertical-align: middle
+      margin-left: -4px
+  &__form-title
+    font-size: 2rem
+    font-weight: 300
+    text-transform: uppercase
+
+  .payments-section
+    display: flex
+    align-items: center
+    +_media-md-down
+      margin: 20px 0 0
+      justify-content: center

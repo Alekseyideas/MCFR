@@ -1,0 +1,56 @@
+.site-map
+  padding: 30px 0
+  background: #f5f5f5
+  .wrapper
+    display: flex
+  &__block
+    width: 25%
+  &__title
+    font-size: 1.6rem
+    text-transform: uppercase
+    font-weight: 300
+  &__secIn
+    margin-top: 30px
+    font-size: 1.5rem
+    font-weight: 300
+    line-height: 2.5rem
+    max-width: 95%
+    i
+      margin-right: 5px
+
+    li
+      margin: 16px 0
+
+
+  &__social-links
+    display: flex
+    align-items: center
+    margin-right: 10px
+    color: black
+    font-size: 2.3rem
+    margin-top: 30px
+    a
+      width: 50px
+      height: 50px
+      display: block
+      background: #e1e1e1
+      color: black
+      border-radius: 50%
+      text-align: center
+      line-height: 50px
+      margin-right: 20px
+      +_media-lg-up
+        &:hover
+          background: $orange
+          color: white
+
+
+  &__mailTo
+    display: flex
+    align-items: center
+    margin-top: 30px
+    &:before
+      content: '\f422'
+      font-family: Ionicons
+      margin-right: 15px
+      font-size: 3rem

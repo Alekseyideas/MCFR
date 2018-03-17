@@ -1,0 +1,89 @@
+.main-slider
+  margin-top: 30px
+  display: block
+  overflow: hidden
+  position: relative
+  height: 150px
+  +_media-xs-up
+    height: 250px
+  +_media-sm-up
+    height: 300px
+  +_media-md-up
+    height: 350px
+  +_media-lg-up
+    height: 450px
+  +_media-xl-up
+    height: 600px
+  &__item
+    background-size: cover
+    display: flex
+    align-items: center
+    height: 150px
+    +_media-xs-up
+      height: 250px
+    +_media-sm-up
+      height: 300px
+    +_media-md-up
+      height: 350px
+    +_media-lg-up
+      height: 450px
+    +_media-xl-up
+      height: 600px
+    &>div
+      width: 100%
+  &__item-title,
+  &__item-desc,
+  &__item-btn
+    font-weight: 300
+    color: white
+  &__item-title
+    text-transform: uppercase
+    font-size: 3rem
+    +_media-xs-up
+      font-size: 3rem
+    +_media-md-up
+      font-size: 5rem
+    +_media-lg-up
+      font-size: 7.6rem
+  &__item-desc
+    font-size: 1.4rem
+    +_media-xs-up
+      font-size: 2rem
+    +_media-md-up
+      font-size: 3rem
+    +_media-lg-up
+      font-size: 3.8em
+  &__item-btn
+    text-transform: uppercase
+    font-size: 1.2rem
+    background: rgba($def-color,.9)
+    display: block
+    width: 140px
+    line-height: 30px
+    height: 30px
+    margin: 10px auto 0
+    letter-spacing: .2rem
+    +_media-xs-up
+      margin: 20px auto 0
+      width: 197px
+      font-size: 1.4rem
+      line-height: 51px
+      height: 51px
+    +_media-lg-up
+      background: rgba($def-color,.6)
+      &:hover
+        background: rgba($def-color,.7)
+        color: white
+
+
+  .owl-dots
+    position: absolute
+    bottom: 2px
+    +_media-sm-up
+      bottom: 10px
+    span
+      background: white
+    .active
+      span
+        background: $orange
+        opacity: 1
