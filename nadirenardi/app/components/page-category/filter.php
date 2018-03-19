@@ -1,34 +1,6 @@
 
 <div id="filter"></div>
-
-<!--onChange={(event)=>this.changedHandler(event,item.name,column+''+key)}-->
 <script type='text/jsx'>
-
-
-
-    class Selects extends React.Component{
-        render(){
-
-
-
-            return(
-                <div className="filter__items">
-                    <div class="filter__column">
-                        <h4 class="filter__title">Title</h4>
-                        <ul>
-                            <li>
-                                <label>
-                                    <input type="checkbox"/>
-                                        <span>Lorem ipsum 1</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            )
-        }
-    }
-
 
     class FilterHeader extends React.Component{
         state={
@@ -44,7 +16,7 @@
                         {
                             name: 'Select 2',
                             value: '1_2',
-                            checked: false
+                            checked: true
                         },
                         {
                             name: 'Select 3',
@@ -84,7 +56,7 @@
                         {
                             name: 'Select 8',
                             value: '3_1',
-                             checked: false
+                             checked: true
                         },
                         {
                             name: 'Select 9',
@@ -163,10 +135,7 @@
 
                 this.setState({selected: selected});
             }
-
-            console.log(selected);
         };
-
 
         deleteHandler = (select,id)=>{
             let selected = [...this.state.selected];
@@ -183,34 +152,35 @@
             this.setState({selected:selected});
         };
 
-
         componentDidMount(){
-          this.state.sections.map((item,key)=>{
-                  item.selects.map((it,k)=>{
-                      if (it.checked){
-                          console.log(it);
+            let activeSelecte = [...this.state.selected];
+          this.state.sections.map((section,key)=>{
+                  section.selects.map((item,id)=>{
+
+
+                      if (item.checked){
+                          activeSelecte.push({name:item.name,value:key+''+id,column:key,id:id});
+
                       }
 
-              })
 
-            })
+              })
+            });
+            this.setState({selected:activeSelecte});
         }
 
     render(){
 
-
-        let activeSelects =  this.state.selected.map((item,key)=>{
+        const activeSelects =  this.state.selected.map((item,key)=>{
             return <div className="filter__active-item" key={key}>
                 <span>{item.name}</span>
-                <button className="delete-select" data-rt={item} onClick={()=>this.deleteHandler(item,key)}>
+                <button className="delete-select" onClick={()=>this.deleteHandler(item,key)}>
                     <i class="ion-android-close"></i>
                 </button>
             </div>
         });
 
-
-
-        let items  = this.state.sections.map((section,column)=>{
+        const items  = this.state.sections.map((section,column)=>{
              return <div className="filter__column" key={column}>
                  <h4 className="filter__title">{section.title}</h4>
                  <ul>
@@ -230,15 +200,15 @@
              </div>;
           });
 
-          const FilterBtn = <div className="filter__btn">
+        const FilterBtn = <div className="filter__btn">
               <span>Фильтр</span>
               <i className="ion-ios-arrow-down"></i>
           </div>;
-          return (
+        return (
           <div className="filter">
               <div className="flex flex--a-center">
                   {FilterBtn}
-                  <div class="flex flex--a-center" id="filterWrapper">
+                  <div class="flex flex--wrap flex--a-center">
                       {activeSelects}
                   </div>
               </div>
@@ -246,14 +216,9 @@
                   {items}
               </div>
            </div>
-          );
+      );
       }
     };
-
-
-
-
-
 
 
     const Filter = (
@@ -262,15 +227,6 @@
         </div>
 
     );
-
-
- /*   class Filter extends React.Component{
-        render(){
-            return   <FilterHeader/> ;
-        }
-    };*/
-
-
 
 
     ReactDOM.render(
