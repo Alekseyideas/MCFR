@@ -11,10 +11,11 @@ export const News = ()=> {
         }
     };
 
+    if(news.right){
+        let  rightHeight = news.right.offsetHeight;
+        news.leftArticle().style.height = rightHeight===0 ? '700px' : rightHeight + 'px';
+    }
 
-    let rightHeight = news.right.offsetHeight;
-
-    news.leftArticle().style.height = rightHeight===0 ? '700px' : rightHeight + 'px';
 
 
 };

@@ -82,6 +82,10 @@ var _News = __webpack_require__(5);
 
 var _stocksSlider = __webpack_require__(6);
 
+var _footer = __webpack_require__(7);
+
+var _filter = __webpack_require__(8);
+
 var device = '';
 
 var Resize = function Resize(func) {
@@ -123,6 +127,8 @@ Resize(mainHeight);
 (0, _News.News)();
 (0, _NewsSlider.NewsSlider)();
 (0, _stocksSlider.StockSlider)();
+(0, _footer.Footer)(device);
+(0, _filter.Filter)();
 
 /***/ }),
 /* 1 */
@@ -315,9 +321,10 @@ var News = exports.News = function News() {
         }
     };
 
-    var rightHeight = news.right.offsetHeight;
-
-    news.leftArticle().style.height = rightHeight === 0 ? '700px' : rightHeight + 'px';
+    if (news.right) {
+        var rightHeight = news.right.offsetHeight;
+        news.leftArticle().style.height = rightHeight === 0 ? '700px' : rightHeight + 'px';
+    }
 };
 
 /***/ }),
@@ -354,6 +361,98 @@ var StockSlider = exports.StockSlider = function StockSlider() {
             }
         }
     });
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var Footer = exports.Footer = function Footer(Resize, device) {
+    if (device === 'tablet' || device === 'mobile') {
+        var toggle = document.querySelectorAll('[data-toggle]');
+
+        for (var i = 0; i < toggle.length; i++) {
+            var title = toggle[i].getElementsByClassName('site-map__title')[0];
+            title.onclick = function () {
+                // const section = this.parentNode.getElementsByClassName('site-map__secIn')[0];
+                var section = $(this).parent().find('.site-map__secIn');
+                this.classList.toggle('active');
+                section.slideToggle();
+            };
+        }
+    }
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var Filter = exports.Filter = function Filter() {
+
+    var fWrapper = document.getElementById('filter');
+    var filter = {
+        button: document.getElementsByClassName('filter__btn')[0],
+        wrapper: fWrapper,
+        header: document.getElementById('filterWrapper'),
+        select: fWrapper.getElementsByTagName('label'),
+        input: fWrapper.getElementsByTagName('input')
+    };
+
+    if (filter.wrapper) {
+        (function () {
+
+            var title = 'Test';
+            filter.template = '<div class="filter__active-item" data-select="' + title + '">\n                                <span>' + title + '</span>\n                                <button class="delete-select"></button>\n                           </div>';
+
+            filter.itemsSelect = [];
+
+            for (var i = 0; i < filter.input.length; i++) {
+                if (filter.input[i].checked) {
+
+                    var inCh = filter.input[i].parentNode.getElementsByTagName('span')[0].textContent;
+
+                    console.log(inCh);
+                }
+            }
+
+            /*   for each (let input in filter.input){
+                 }
+            */
+
+            var AddFilterHandler = function AddFilterHandler(title) {
+                filter.itemsSelect.map(function (item) {
+                    filter.header.insertAdjacentHTML(item);
+                });
+            };
+
+            var _loop = function _loop(_i) {
+
+                filter.select[_i].onclick = function () {
+                    filter.text = this.getElementsByTagName('span')[0].textContent;
+
+                    title = _i;
+                    filter.itemsSelect.push(filter.template);
+                    AddFilterHandler();
+                };
+            };
+
+            for (var _i = 0; _i < filter.select.length; _i++) {
+                _loop(_i);
+            }
+        })();
+    }
 };
 
 /***/ })

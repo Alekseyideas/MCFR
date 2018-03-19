@@ -1,0 +1,17 @@
+.pagination
+  display: flex
+  li
+    margin: 0 5px
+    a
+      color: #787878
+      +_media-lg-up
+        &:hover
+          color: $orange
+    &.active
+      color: $orange
+    &:last-child
+      margin-right: 0
+  &__num
+    display: flex
+  &__shown
+    margin-left: 5px

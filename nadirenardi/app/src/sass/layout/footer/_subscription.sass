@@ -18,13 +18,16 @@
       display: block
     input
       height: 44px
-      min-width: 309px
+
       background: #ededed
       margin-left: 20px
       padding: 10px
       font-weight: 300
+      +_media-sm-up
+        min-width: 309px
       +_media-md-down
         margin: 20px 0
+
   .from-group
     +_media-md-down
       display: inline-block

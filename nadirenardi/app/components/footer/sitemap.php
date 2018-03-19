@@ -2,7 +2,7 @@
 	<div class="wrapper">
 		<div class="site-map__block">
 			<h2 class="site-map__title">
-				Faq
+				About
 			</h2>
 			<div class="site-map__secIn">
 				<p>Nadi Renardi - женская одежда на каждый день и на праздник. Сделано в Украине.</p>
@@ -18,7 +18,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="site-map__block">
+		<div class="site-map__block" data-toggle='toggle'>
 			<h2 class="site-map__title">
 				Information
 			</h2>
@@ -31,7 +31,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="site-map__block">
+		<div class="site-map__block" data-toggle='toggle'>
 			<h2 class="site-map__title">
 				Help
 			</h2>

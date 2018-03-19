@@ -42,6 +42,8 @@ import {MainSlider} from './page-main/main-slider';
 import {HitsSlider} from './page-main/hits-slider';
 import {News} from "./page-main/News";
 import {StockSlider} from "./page-main/stocks-slider";
+import {Footer} from "./footer/footer";
+import {Filter} from "./page-category/filter";
 
 Header(device);
 MainSlider();
@@ -49,3 +51,5 @@ HitsSlider();
 News();
 NewsSlider();
 StockSlider();
+Footer(device);
+Filter();

@@ -9,15 +9,18 @@
 		</form>
 	</div>
 	<ul class="main-menu__items">
-		<li><a href="#">Магазины</a></li>
-		<li><a href="#">Ws18</a></li>
-		<li><a href="#">Marshmallow</a></li>
-		<li><a href="#">Зима17</a></li>
-		<li><a href="#">Осень17</a></li>
-		<li><a href="#">Лукбук</a></li>
-		<li><a href="#">Платья</a></li>
-		<li><a href="#">Пальто</a></li>
-		<li><a href="#">Sale</a></li>
+
+        <?php $catLink = 'category.php'?>
+
+		<li><a href="<?echo $catLink?>">Магазины</a></li>
+		<li><a href="<?echo $catLink?>">Ws18</a></li>
+		<li><a href="<?echo $catLink?>">Marshmallow</a></li>
+		<li><a href="<?echo $catLink?>">Зима17</a></li>
+		<li><a href="<?echo $catLink?>">Осень17</a></li>
+		<li><a href="<?echo $catLink?>">Лукбук</a></li>
+		<li><a href="<?echo $catLink?>">Платья</a></li>
+		<li><a href="<?echo $catLink?>">Пальто</a></li>
+		<li><a href="<?echo $catLink?>">Sale</a></li>
 		<li><a href="#">Про нас</a></li>
 		<li>
 			<a href="#">Блог</a>
