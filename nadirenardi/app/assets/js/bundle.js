@@ -128,7 +128,7 @@ Resize(mainHeight);
 (0, _NewsSlider.NewsSlider)();
 (0, _stocksSlider.StockSlider)();
 (0, _footer.Footer)(device);
-(0, _filter.Filter)();
+(0, _filter.Filter)(device);
 
 /***/ }),
 /* 1 */
@@ -399,59 +399,14 @@ var Footer = exports.Footer = function Footer(Resize, device) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var Filter = exports.Filter = function Filter() {
+var Filter = exports.Filter = function Filter(device) {
 
     var fWrapper = document.getElementById('filter');
-    var filter = {
-        button: document.getElementsByClassName('filter__btn')[0],
-        wrapper: fWrapper,
-        header: document.getElementById('filterWrapper'),
-        select: fWrapper.getElementsByTagName('label'),
-        input: fWrapper.getElementsByTagName('input')
-    };
 
-    if (filter.wrapper) {
-        (function () {
-
-            var title = 'Test';
-            filter.template = '<div class="filter__active-item" data-select="' + title + '">\n                                <span>' + title + '</span>\n                                <button class="delete-select"></button>\n                           </div>';
-
-            filter.itemsSelect = [];
-
-            for (var i = 0; i < filter.input.length; i++) {
-                if (filter.input[i].checked) {
-
-                    var inCh = filter.input[i].parentNode.getElementsByTagName('span')[0].textContent;
-
-                    console.log(inCh);
-                }
-            }
-
-            /*   for each (let input in filter.input){
-                 }
-            */
-
-            var AddFilterHandler = function AddFilterHandler(title) {
-                filter.itemsSelect.map(function (item) {
-                    filter.header.insertAdjacentHTML(item);
-                });
-            };
-
-            var _loop = function _loop(_i) {
-
-                filter.select[_i].onclick = function () {
-                    filter.text = this.getElementsByTagName('span')[0].textContent;
-
-                    title = _i;
-                    filter.itemsSelect.push(filter.template);
-                    AddFilterHandler();
-                };
-            };
-
-            for (var _i = 0; _i < filter.select.length; _i++) {
-                _loop(_i);
-            }
-        })();
+    if (device === 'tablet' || device === 'mobile') {
+        fWrapper.onclick = function () {
+            $('');
+        };
     }
 };
 

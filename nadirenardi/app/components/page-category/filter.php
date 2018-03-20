@@ -191,7 +191,7 @@
                                  <label key={column+''+key} >
                                      <input type="checkbox" value={item.value}  checked={item.checked}/>
 
-                                     <span onClick={()=>this.clickedHandler(column,key)}>{item.name}</span>
+                                     <span className={item.checked?'active':''} onClick={()=>this.clickedHandler(column,key)}>{item.name}</span>
                                  </label>
                              </li>
                          })
@@ -222,10 +222,7 @@
 
 
     const Filter = (
-        <div className="filter">
             <FilterHeader/>
-        </div>
-
     );
 
 

@@ -52,4 +52,4 @@ News();
 NewsSlider();
 StockSlider();
 Footer(device);
-Filter();
+Filter(device);

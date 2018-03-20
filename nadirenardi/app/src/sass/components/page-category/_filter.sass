@@ -1,17 +1,37 @@
+#filter
+  width: 100%
 .filter
+  width: 100%
+  +_media-lg-up
+    &:hover
+      .filter
+        &__items
+          display: flex
   &__items
     position: absolute
     background: white
-    display: flex
     width: 100%
     left: 0
     top: 40px
-    z-index: 2
+    z-index: 3
     box-shadow: 0 10px 10px rgba(black,.1)
     padding: 10px 0 50px
+    display: none
+    border: 1px solid rgba(black,.1)
+    +_media-lg-down
+      padding: 0
+      display: block
+      position: relative
+      margin: 0
+      top: 0
   &__column
     width: 16.66%
     padding-right: 20px
+    +_media-lg-down
+      width: 100%
+      padding: 0
+      ul
+        display: none
     label
       cursor: pointer
       transition: $def-transition
@@ -23,6 +43,11 @@
       span
         padding: 15px 20px
         display: block
+        &.active
+          background: #fafafa
+          +_media-lg-up
+            &:hover
+              background: #f3f3f3
       +_media-lg-up
         &:hover
           background: #f3f3f3
@@ -32,19 +57,21 @@
     -webkit-appearance: checkbox
     //display: none
     position: absolute
-    right: 0
+    right: 10px
     top: 50%
     width: 10px
+    margin-top: -4px
 
   &__btn
     display: flex
     align-items: center
     justify-content: space-between
     padding: 10px
-    width: 223px
+    width: 100%
     background: #f3f3f3
     cursor: pointer
     +_media-lg-up
+      width: 223px
       &:hover
         background: darken(#f3f3f3,10)
   &__active-item
@@ -58,6 +85,21 @@
       +_media-lg-up
       &:hover
         color: $orange
+    +_media-lg-down
+      display: none
   &__title
     font-size: 1.6rem
     padding: 0 10px
+    +_media-lg-down
+      background: #4a4a4a
+      color: white
+      display: flex
+      width: 100%
+      justify-content: space-between
+      align-items: center
+      padding: 10px 10px
+      border-bottom: 1px solid rgba(white,.2)
+      &:after
+        content: '\f3d0'
+        font-family: Ionicons
+        font-size: 25px
