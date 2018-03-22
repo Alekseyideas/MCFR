@@ -1,0 +1,218 @@
+.page-cart
+  &__wrapper
+    display: flex
+    align-items: flex-start
+    +_media-sm-down
+      display: block
+
+  &__right
+    width: 20%
+    padding-left: 30px
+    +_media-sm-down
+      width: 100%
+      padding: 20px 0
+  &__left
+    width: 80%
+    border-right: 1px solid #d7d7d7
+    padding-right: 20px
+    +_media-sm-down
+      width: 100%
+      padding: 0
+      border: 0
+
+
+
+  &__tr
+    display: flex
+    align-items: center
+    +_media-xs-down
+      display: block
+      &>div
+        display: inline-block
+        vertical-align: middle
+
+    .page-cart__td
+      &:nth-child(1)
+        width: 80px
+      &:nth-child(2)
+        width: 50%
+        width: calc(100% - 80px - 110px - 550px - 50px - 20px)
+        padding-left: 20px
+        min-width: 140px
+        @media (max-width: 1600px)
+          width: calc(100% - 80px - 110px - 350px - 50px - 20px)
+        @media (max-width: 1400px)
+          width: calc(100% - 80px - 110px - 250px - 50px - 20px)
+        +_media-lg-down
+          width: calc(100% - 80px - 110px - 150px - 50px - 20px)
+        +_media-xs-down
+          width: calc(100% - 100px)
+      &:nth-child(3)
+        text-align: center
+        width: 110px
+      &:nth-child(4)
+        text-align: center
+        width: 550px
+        @media (max-width: 1400px)
+          width: 250px
+        @media (max-width: 1600px)
+          width: 350px
+        +_media-lg-down
+          width: 150px
+
+      &:nth-child(5)
+        text-align: center
+        width: 50px
+        +_media-xs-down
+          position: absolute
+          top: 10px
+          right: 0
+  &__table-header
+    +_media-xs-down
+      display: none
+  &__table-body
+    .page-cart__tr
+      position: relative
+      padding: 10px 0
+      border-bottom: 1px solid #d7d7d7
+      .page-cart__td
+          &--name
+            font-weight: bold
+            font-size: 2rem
+            +_media-lg-down
+              font-size: 1.5rem
+          &--size
+            +_media-xs-down
+              text-align: left
+              display: block
+              width: 100%
+            span
+              +_media-xs-up
+                display: none
+          &--price
+            font-size: 2rem
+            +_media-xs-down
+              text-align: left
+              display: block
+              width: 100%
+            +_media-xs-up
+              .text
+                display: none
+            +_media-lg-down
+              font-size: 1.5rem
+      .delete-product
+        width: 20px
+        height: 20px
+        display: block
+        margin: auto
+        color: #adadad
+        +_media-lg-up
+          &:hover
+            color: $orange
+      .old-price
+        color: #adadad
+        text-decoration: line-through
+        font-size: .9em
+        margin-left: 5px
+        font-weight: 300
+  &__right-text
+    font-size: 1.8rem
+    font-weight: 300
+
+  &__right-price
+    color: $orange
+    +_media-lg-down
+      font-size: 1.5rem
+    +_media-sm-down
+      font-size: 2.2rem
+  &__info-title
+    display: flex
+    align-items: center
+    font-size: 2rem
+    cursor: pointer
+    position: relative
+    &:before
+      margin-right: 10px
+      content: ''
+      display: block
+      width: 20px
+      height: 20px
+      border: 1px solid $orange
+    &:after
+      content: ''
+      font-family: Ionicons
+      position: absolute
+      left: 4px
+      font-size: 3rem
+      top: -6px
+      color: $orange
+
+  &__info-row
+    padding: 15px 0
+    border-bottom: 1px solid #dbdbdb
+    &.active
+      .page-cart__info-title
+        &:after
+          content: '\f3fd'
+
+  &__info-radio
+
+    input
+      -webkit-appearance: radio
+      display: none
+
+  &__info
+    input,
+    textarea
+      border: 1px solid #dfdfdf
+      padding: 5px
+      font-family: $def-font
+      font-size: 1.5rem
+      letter-spacing: 1px
+      margin: 10px 0
+      color: #333333
+      &::placeholder
+        font-weight: 300
+        font-family: $def-font
+
+    input
+      max-width: 400px
+      height: 40px
+  &__info-fields
+    display: none
+  .plusDel
+    font-size: 2rem
+    color: $orange
+    white-space: nowrap
+  &__btn-confirm
+    color: white
+    width: 100%
+    max-width: 400px
+    display: block
+    font-size: 2.3rem
+    margin: 20px auto 60px
+    text-align: center
+    padding: 20px 0
+    text-transform: uppercase
+    background: $orange
+    +_media-lg-up
+      &:hover
+        background: darken($orange,10)
+        color: white
+  &__total-price
+    display: flex
+    justify-content: center
+    align-items: baseline
+    margin: 40px 0 40px
+  &__total-text
+    font-size: 1.8rem
+    font-weight: 300
+    display: block
+    margin-right: 10px
+  &__total-val
+    font-size: 3.5rem
+    display: block
+    color: $orange
+    font-weight: bold
+
+

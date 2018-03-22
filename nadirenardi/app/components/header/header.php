@@ -40,7 +40,7 @@
 					<a href="#" class="header__icon">
 						<i class="far fa-heart"></i>
 					</a>
-					<a href="#" class="header__icon header__icon--cart">
+					<a href="cart.php" class="header__icon header__icon--cart">
 						<ion-icon class="ion-bag"></ion-icon>
 
 						<span class="count">0</span>

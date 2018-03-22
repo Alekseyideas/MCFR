@@ -1,5 +1,6 @@
 #filter
-  width: 100%
+  +_media-lg-down
+    width: 100%
 .filter
   width: 100%
   +_media-lg-up
@@ -43,8 +44,27 @@
       span
         padding: 15px 20px
         display: block
+        +_media-lg-down
+          display: flex
+          &:before
+            content: ''
+            font-family: Ionicons
+            color: $orange
+            font-size: 30px
+            text-align: center
+            line-height: 20px
+            display: block
+            width: 20px
+            height: 20px
+            border: 1px solid $orange
+            margin-right: 10px
+          &.active
+            &:before
+              content: '\f3fd'
         &.active
           background: #fafafa
+
+
           +_media-lg-up
             &:hover
               background: #f3f3f3
@@ -91,6 +111,7 @@
     font-size: 1.6rem
     padding: 0 10px
     +_media-lg-down
+      font-weight: 300
       background: #4a4a4a
       color: white
       display: flex
@@ -103,3 +124,7 @@
         content: '\f3d0'
         font-family: Ionicons
         font-size: 25px
+        transition: $def-transition
+      &.active
+        &:after
+          transform: rotate(180deg)

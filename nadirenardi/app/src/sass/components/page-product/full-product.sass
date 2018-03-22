@@ -1,0 +1,264 @@
+.full-product
+  margin-top: 40px
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    +_media-lg-down
+      flex-direction: column-reverse
+
+  &__left
+    display: block
+    width: 70%
+    @media screen and (max-width: 1370px)
+      width: 65%
+    +_media-lg-down
+      width: 100%
+
+  &__imgs
+    display: flex
+    justify-content: space-between
+    margin-left: .5%
+    width: calc(100% - 120px)
+    position: relative
+    @media screen and (max-width: 1370px)
+      width: calc(100% - 80px)
+    &.largeImg
+      .full-product__img
+        display: none
+      .full-product__large-photo
+        display: block
+
+
+
+  &__large-photo
+    display: none
+    width: 100%
+    position: relative
+    top: 0
+    left: 0
+    z-index: 12
+    img
+      width: 100%
+    .nav-photo
+      position: absolute
+      right: 0
+      padding: 10px
+      display: flex
+      &--top
+        top: 0
+      &--bottom
+        bottom: 0
+      button
+        margin: 0 10px
+        font-size: 2rem
+        &:nth-child(1),
+        &:nth-child(3)
+          font-size: 3rem
+
+
+
+
+  &__img
+    width: 49.8%
+    +_media-lg-down
+      display: none
+    img
+      width: 100%
+
+
+
+  &__right
+    width: 27%
+    text-align: center
+    position: relative
+    padding-top: 80px
+    @media screen and (max-width: 1370px)
+      width: 33%
+    +_media-lg-down
+      padding: 0
+      width: 100%
+  &__article
+    font-size: 1.2rem
+    font-weight: 300
+    color: #686868
+  &__title
+    font-size: 4rem
+    font-weight: 300
+
+  &__slider
+    width: 120px
+    @media screen and (max-width: 1370px)
+      width: 80px
+    +_media-lg-down
+      display: none
+    .next,
+    .prev
+      font-size: 4rem
+      text-align: center
+      margin: auto
+      display: block
+      color: #bdbdbd
+      +_media-lg-up
+        &:hover
+          color: $orange
+
+  &__item
+    display: block
+    cursor: pointer
+  &__sizes
+    display: flex
+    justify-content: center
+    margin: 15px 0
+    label
+      cursor: pointer
+      font-size: 2.5rem
+      font-weight: 300
+      margin: 0 10px
+      &:hover
+        color: $orange
+      &.active
+        color: $orange
+    input
+      //-webkit-appearance: radio
+      display: none
+  &__btn-to-favorite
+    font-size: 2.5rem
+    width: 30px
+    margin: 15px auto
+    display: none
+    +_media-lg-up
+      display: block
+      &:hover
+        color: $orange
+  #size-table
+    text-decoration: underline
+    font-size: 1.6rem
+
+  &__price
+    margin: 30px 0
+    display: flex
+    align-items: center
+    justify-content: center
+    font-weight: 300
+  &__old-price
+    text-decoration: line-through
+    color: #bababa
+    font-size: 2rem
+  &__cur-price
+    font-size: 3.5rem
+    margin-left: 10px
+  &__buy-btns
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 0 30px
+    a
+      display: flex
+      margin: 0 10px
+      align-items: center
+      color: $orange
+      span
+        margin-left: 5px
+        font-size: 1.8rem
+        font-weight: 300
+        border-bottom: 1px solid $orange
+        +_media-lg-up
+          &:hover
+            border: 0
+      i
+        font-size: 2rem
+  &__btn-addToCart
+    +_media-lg-down
+      display: none !important
+  &__info
+    text-align: left
+    &.active
+      .full-product__btn-info
+        &:after
+          content: '\f462'
+  &__btn-info
+    background: #e6e6e6
+    display: flex
+    justify-content: space-between
+    padding: 20px 10px
+    margin: 20px 0 10px
+    font-size: 2.3rem
+    font-weight: 300
+    transition: $def-transition
+    cursor: pointer
+    &:after
+      content: '\f489'
+      font-family: Ionicons
+      font-size: 3rem
+
+
+
+    +_media-lg-up
+      padding: 10px
+      &:hover
+        background: #d6d6d6
+    span
+      display: flex
+      align-items: flex-start
+  &__infoD
+    font-size: 2.5rem
+    margin-left: 5px
+    background: #d6d6d6
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    margin-top: -20px
+  &__info-title
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 20px 0 10px
+    span
+      font-weight: bold
+      font-size: 2rem
+    img
+      max-width: 200px
+      height: 40px
+      display: block
+  &__info-wrapper
+    display: none
+
+
+  &__mob-slider
+    margin-top: 20px
+    +_media-lg-up
+      display: none !important
+
+
+
+  &__discount
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 120px 120px 0 0
+    border-color: $orange transparent transparent transparent
+    position: absolute
+    top: 0
+    z-index: 2
+
+
+  &__discount-text
+    position: absolute
+    margin-top: 30px
+    top: 0
+    left: 10px
+    font-size: 2.2rem
+    font-weight: bold
+    color: white
+    z-index: 2
+    +_media-lg-down
+      font-size: 2rem
+
+
+  .slick-disabled
+    opacity: 0

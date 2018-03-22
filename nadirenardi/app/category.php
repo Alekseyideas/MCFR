@@ -13,7 +13,7 @@
 	<div class="wrapper wrapper--category">
 		<?php
 			$i=0;
-			while($i<16):
+			while($i<15):
 				$i++;
 				include 'components/base/product.php';
 			endwhile;

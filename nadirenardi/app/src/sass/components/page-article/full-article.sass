@@ -1,0 +1,62 @@
+.full-article
+  margin-bottom: 40px
+  &__left
+    width: 75%
+    +_media-md-down
+      width: 100%
+  &__right
+    width: 20%
+    margin-top: 40px
+    +_media-md-down
+      display: none
+    a
+      display: block
+      margin: 20px 0
+      border-bottom: 1px solid #dadada
+      padding-bottom: 20px
+      span
+        font-size: 2rem
+        padding-top: 10px
+        display: block
+        +_media-lg-down
+          font-size: 1.7rem
+          line-height: 2.3rem
+
+
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    +_media-md-down
+      display: block
+
+  &__content
+    width: 100%
+    max-width: 900px
+    margin: auto
+    font-size: 1.8rem
+    line-height: 3rem
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: 40px
+    +_media-lg-down
+      margin-top: 60px
+    span
+      color: #a9a9a9
+      font-size: 2rem
+      font-weight: 300
+
+    a
+      color: $orange
+      font-size: 2.2rem
+      +_media-lg-up
+        &:hover
+          color: darken($orange,10)
+  .section-title
+    font-size: 4rem
+
+  .slider-article
+    margin: 30px 0
+    .owl-dots
+      margin: 20px 0

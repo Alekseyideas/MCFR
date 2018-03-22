@@ -1,0 +1,66 @@
+.blog
+  margin-bottom: 40px
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &__article
+    background: white
+    width: 100%
+    box-shadow: 0 5px 10px rgba(black,.2)
+    margin: 20px auto
+    transition: $def-transition
+    +_media-sm-up
+      width: 48%
+    +_media-lg-up
+      width: 32%
+      &:hover
+        box-shadow: 0 5px 10px rgba(black,.5)
+    +_media-xl-up
+      width: 24%
+  &__article-img
+    display: block
+    width: 100%
+    height: auto
+    background: no-repeat center/cover
+    border-bottom: 4px solid $orange
+    +_media-sm-up
+      height: 230px
+      img
+        display: none
+    +_media-md-up
+      height: 300px
+    +_media-lg-up
+      height: 350px
+    +_media-xl-up
+      height: 350px
+  &__article-title
+    display: flex
+    align-items: center
+    padding: 20px
+    font-size: 2rem
+    line-height: 3rem
+    +_media-sm-up
+      padding: 0 20px
+      height: 90px
+      font-size: 1.8rem
+      line-height: 2.2rem
+    +_media-md-up
+      font-size: 2rem
+    +_media-lg-up
+      font-size: 2.3rem
+      line-height: 2.8rem
+    +_media-xl-up
+      font-size: 2.5rem
+      line-height: 3rem
+  &__article-footer
+    display: flex
+    justify-content: space-between
+    padding: 0 20px 20px
+    color: #a8a8a8
+    font-weight: 300
+  &__pagination
+    +_media-lg-down
+      display: block
+      .mobile-load-more
+        display: block

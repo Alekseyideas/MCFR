@@ -86,6 +86,12 @@ var _footer = __webpack_require__(7);
 
 var _filter = __webpack_require__(8);
 
+var _product = __webpack_require__(9);
+
+var _cart = __webpack_require__(11);
+
+var _article = __webpack_require__(12);
+
 var device = '';
 
 var Resize = function Resize(func) {
@@ -129,6 +135,9 @@ Resize(mainHeight);
 (0, _stocksSlider.StockSlider)();
 (0, _footer.Footer)(device);
 (0, _filter.Filter)(device);
+(0, _product.Product)(device);
+(0, _cart.Cart)();
+(0, _article.Article)();
 
 /***/ }),
 /* 1 */
@@ -404,10 +413,283 @@ var Filter = exports.Filter = function Filter(device) {
     var fWrapper = document.getElementById('filter');
 
     if (device === 'tablet' || device === 'mobile') {
-        fWrapper.onclick = function () {
-            $('');
-        };
+
+        $(document).ready(function () {
+            $('#filter .filter__btn').click(function () {
+                $('.filter__items').slideToggle();
+            });
+
+            $('.filter__title').click(function () {
+                console.log();
+                $(this).toggleClass('active').parent().find('ul').slideToggle();
+            });
+        });
     }
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Product = undefined;
+
+var _PopUp = __webpack_require__(10);
+
+var Product = exports.Product = function Product(device) {
+
+    $('.full-product__slider').slick({
+        vertical: true,
+        infinite: false,
+        slidesToShow: 3,
+        verticalSwiping: true,
+        prevArrow: '<button type="button" class="prev"><i class="ion-ios-arrow-up"></i></button>',
+        nextArrow: '<button type="button" class="next"><i class="ion-ios-arrow-down"></i></button>'
+    });
+
+    $(document).ready(function () {
+
+        var sizeChoose = true;
+        var btn = $('.full-product__btn-addToCart');
+        var id = $('#popSizes');
+
+        $('.full-product__sizes label span').click(function () {
+            sizeChoose = false;
+        });
+
+        btn.click(function () {
+            new _PopUp.PopUp(btn, id, sizeChoose).show();
+        });
+
+        $('.active .full-product__info-wrapper').show();
+
+        $('.full-product__btn-info').click(function () {
+            $(this).parent().toggleClass('active').find('.full-product__info-wrapper').slideToggle(300);
+        });
+
+        $('.full-product__mob-slider.owl-carousel').owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            autoplayTimeout: 6000,
+            autoplayHoverPause: true,
+            nav: false,
+            responsive: {
+                700: {
+                    items: 2
+                }
+            }
+        });
+
+        $('.may-like.owl-carousel').owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            autoplayTimeout: 6000,
+            autoplayHoverPause: true,
+            nav: false,
+            responsive: {
+                700: {
+                    items: 2
+                },
+                1200: {
+                    items: 2,
+                    dots: false
+                },
+                1300: {
+                    dots: false,
+                    items: 3,
+                    nav: false
+                }
+            }
+        });
+
+        if (device === 'mobile' || device === 'tablet') {
+            var discount = $('.full-product__discount');
+            var textDiscount = $('.full-product__discount-text');
+            var slider = $('.full-product__mob-slider');
+
+            var mTop = device === 'tablet' ? 83 : 70;
+
+            discount.css('top', slider.offset().top - mTop + 'px');
+            textDiscount.css('top', slider.offset().top - mTop + 'px');
+            console.log(slider.offset().top);
+        }
+
+        var img = $('.clickable');
+        var image = {
+            container: $('.full-product__imgs'),
+            btn: img,
+            count: img.length,
+            wrap: $('.full-product__large-photo img'),
+            btnPrev: $('.prev-photo'),
+            btnNext: $('.next-photo'),
+            btnClose: $('.close-photo'),
+            current: null,
+            changeImage: function changeImage(pos) {
+                $('.clickable[data-pos="' + pos + '"]').click();
+            }
+
+        };
+
+        image.btn.click(function () {
+            var link = $(this).find('img').attr('src');
+            image.current = $(this).data('pos');
+            image.container.addClass('largeImg');
+            image.wrap.attr('src', link);
+        });
+
+        image.btnNext.click(function () {
+            image.current++;
+            if (image.current === image.count - 1) {
+                image.current = 1;
+            }
+            image.changeImage(image.current);
+        });
+        image.btnPrev.click(function () {
+            image.current--;
+            if (image.current === 0) image.current = image.count - 2;
+
+            image.changeImage(image.current);
+        });
+
+        image.btnClose.click(function () {
+            image.container.removeClass('largeImg');
+        });
+    });
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PopUp = exports.PopUp = function () {
+    function PopUp() {
+        var btn = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+        var _this = this;
+
+        var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+        var toShow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+        _classCallCheck(this, PopUp);
+
+        this.id = id;
+        var body = $('body');
+        var show = toShow;
+
+        this.popUp = {
+            btn: btn,
+            btnClose: $('.popUp__close-btn'),
+            showPopUp: function showPopUp() {
+                if (show) {
+                    id.addClass('active');
+                    body.addClass('hidden');
+                }
+            },
+            closePopUp: function closePopUp() {
+                id.removeClass('active');
+                body.removeClass('hidden');
+            }
+        };
+
+        this.popUp.btnClose.click(function () {
+            _this.popUp.closePopUp();
+        });
+    }
+
+    _createClass(PopUp, [{
+        key: 'show',
+        value: function show() {
+            this.popUp.showPopUp();
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            this.popUp.closePopUp();
+        }
+    }]);
+
+    return PopUp;
+}();
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var Cart = exports.Cart = function Cart() {
+
+    var product = {
+        btnDel: $('.delete-product'),
+        row: $('.page-cart__tr')
+    };
+
+    product.btnDel.click(function () {
+        $(this).parent().parent().slideUp();
+    });
+
+    var radio = $('.page-cart__info-radio');
+
+    function Check(name) {
+        var input = radio.find('input[name="' + name + '"]');
+        input.each(function () {
+            if ($(this).is(':checked')) {
+                $(this).parents('.page-cart__info-row').addClass('active');
+                $(this).parents('.page-cart__info-row').find('.page-cart__info-fields').show();
+            }
+        });
+        input.change(function () {
+            var parent = radio.find('input[name="' + name + '"]').parents();
+            input.parents().removeClass('active');
+            input.parents('.page-cart__info-row').find('.page-cart__info-fields').slideUp();
+            $(this).parents('.page-cart__info-row').addClass('active').find('.page-cart__info-fields').slideDown();
+        });
+    }
+
+    Check('delivery');
+    Check('payment');
+};
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var Article = exports.Article = function Article() {
+    $('.slider-article.owl-carousel').owlCarousel({
+        items: 1,
+        margin: 10,
+        autoHeight: true
+    });
 };
 
 /***/ })

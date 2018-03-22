@@ -1,3 +1,4 @@
+
 import {NewsSlider} from "./page-main/News-slider";
 
 
@@ -44,6 +45,10 @@ import {News} from "./page-main/News";
 import {StockSlider} from "./page-main/stocks-slider";
 import {Footer} from "./footer/footer";
 import {Filter} from "./page-category/filter";
+import {Product} from "./page-product/product";
+import {Cart} from "./cart/cart";
+import {Article} from "./page-article/article";
+
 
 Header(device);
 MainSlider();
@@ -53,3 +58,9 @@ NewsSlider();
 StockSlider();
 Footer(device);
 Filter(device);
+Product(device);
+Cart();
+Article();
+
+
+

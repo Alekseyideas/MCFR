@@ -23,11 +23,11 @@
 		<li><a href="<?echo $catLink?>">Sale</a></li>
 		<li><a href="#">Про нас</a></li>
 		<li>
-			<a href="#">Блог</a>
+			<a href="blog.php">Блог</a>
 			<ul>
-				<li><a href="#">Lorem  1</a></li>
-				<li><a href="#">Lorem  2</a></li>
-				<li><a href="#">Lorem  3</a></li>
+				<li><a href="blog.php">Lorem  1</a></li>
+				<li><a href="blog.php">Lorem  2</a></li>
+				<li><a href="blog.php">Lorem  3</a></li>
 			</ul>
 		</li>
 		<li><a href="#">Контакты</a></li>

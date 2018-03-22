@@ -6,7 +6,7 @@
 		<a href="#" class="product__btn-to-favorite">
 			<i class="far fa-heart"></i>
 		</a>
-		<a href="#">
+		<a href="/product.php">
 			<img src="assets/img/product/product.jpg" alt="product">
 		</a>
 	</div>
@@ -34,6 +34,6 @@
 	</div>
 
 
-	<a href="#" class="product__btn-link">Роздивитися</a>
+	<a href="/product.php" class="product__btn-link">Роздивитися</a>
 
 </div>
