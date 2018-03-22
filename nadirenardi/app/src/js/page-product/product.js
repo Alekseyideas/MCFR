@@ -80,9 +80,12 @@ export const Product = device =>{
 
             const mTop = device==='tablet' ? 83 : 70;
 
-            discount.css('top',slider.offset().top  - mTop + 'px');
-            textDiscount.css('top',slider.offset().top - mTop  + 'px');
-            console.log(slider.offset().top);
+            if(slider.length > 0){
+                discount.css('top',slider.offset().top  - mTop + 'px');
+                textDiscount.css('top',slider.offset().top - mTop  + 'px');
+            }
+
+
         }
 
         const img = $('.clickable');

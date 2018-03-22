@@ -1,0 +1,24 @@
+.contacts
+  margin: 0 0 40px
+  font-weight: 300
+  font-size: 1.8rem
+  line-height: 3rem
+  a
+    margin-left: 10px
+
+  &__wrapper
+    display: block
+    +_media-lg-up
+      display: flex
+      align-items: flex-start
+      justify-content: space-between
+
+  &__left
+    width: 25%
+    +_media-lg-down
+      width: 100%
+  &__right
+    width: 74%
+    +_media-lg-down
+      width: 100%
+      margin-top: 20px

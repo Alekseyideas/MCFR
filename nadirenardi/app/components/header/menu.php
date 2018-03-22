@@ -21,7 +21,7 @@
 		<li><a href="<?echo $catLink?>">Платья</a></li>
 		<li><a href="<?echo $catLink?>">Пальто</a></li>
 		<li><a href="<?echo $catLink?>">Sale</a></li>
-		<li><a href="#">Про нас</a></li>
+		<li><a href="about.php">Про нас</a></li>
 		<li>
 			<a href="blog.php">Блог</a>
 			<ul>
@@ -30,7 +30,7 @@
 				<li><a href="blog.php">Lorem  3</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Контакты</a></li>
+		<li><a href="contacts.php">Контакты</a></li>
 	</ul>
 
 	<div class="mobile-menu__footer">

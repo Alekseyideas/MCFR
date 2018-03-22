@@ -2391,3 +2391,51 @@ h6.section-title,
     margin: 30px 0; }
     .full-article .slider-article .owl-dots {
       margin: 20px 0; }
+
+.about {
+  margin-bottom: 40px; }
+  .about__wrapper {
+    max-width: 900px;
+    margin: auto; }
+    .about__wrapper img {
+      margin: 20px auto;
+      display: block; }
+  .about__text {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    font-weight: 300; }
+
+.contacts {
+  margin: 0 0 40px;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 3rem; }
+  .contacts a {
+    margin-left: 10px; }
+  .contacts__wrapper {
+    display: block; }
+    @media screen and (min-width: 1200px) {
+      .contacts__wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
+  .contacts__left {
+    width: 25%; }
+    @media screen and (max-width: 1199.98px) {
+      .contacts__left {
+        width: 100%; } }
+  .contacts__right {
+    width: 74%; }
+    @media screen and (max-width: 1199.98px) {
+      .contacts__right {
+        width: 100%;
+        margin-top: 20px; } }

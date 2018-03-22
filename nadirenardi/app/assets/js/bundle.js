@@ -518,9 +518,10 @@ var Product = exports.Product = function Product(device) {
 
             var mTop = device === 'tablet' ? 83 : 70;
 
-            discount.css('top', slider.offset().top - mTop + 'px');
-            textDiscount.css('top', slider.offset().top - mTop + 'px');
-            console.log(slider.offset().top);
+            if (slider.length > 0) {
+                discount.css('top', slider.offset().top - mTop + 'px');
+                textDiscount.css('top', slider.offset().top - mTop + 'px');
+            }
         }
 
         var img = $('.clickable');
