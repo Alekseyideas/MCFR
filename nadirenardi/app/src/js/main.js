@@ -48,6 +48,9 @@ import {Filter} from "./page-category/filter";
 import {Product} from "./page-product/product";
 import {Cart} from "./cart/cart";
 import {Article} from "./page-article/article";
+import {Contacs} from "./page-contacts/contacts";
+import {Delivery} from "./page-delivery/delivery";
+import {PopUp} from "./PopUps/PopUp";
 
 
 Header(device);
@@ -61,6 +64,29 @@ Filter(device);
 Product(device);
 Cart();
 Article();
+Contacs();
+Delivery();
+
+
+
+$(document).ready(function () {
+
+    $('.showSizes,#size-table').click(function () {
+        new PopUp('',$('#rozmirna-sitka')).show();
+    });
+
+    $('.header__icon--user,.header__icon--favorite').click(function () {
+        new PopUp('',$('#popUpEnter')).show();
+    });
+
+
+
+    $('.callPhone').click(()=>{
+        new PopUp('',$('#callBack')).show();
+    });
+    $('.phoneNumber').mask('+0(000) 000-00-00');
+});
+
 
 
 

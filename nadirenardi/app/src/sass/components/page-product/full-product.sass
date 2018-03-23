@@ -1,5 +1,12 @@
 .full-product
   margin-top: 40px
+  .product
+    +_media-lg-up
+      max-width: 280px
+    +_media-xl-up
+      max-width: 360px
+  .product__size-item
+    margin-right: 10px
   &__wrapper
     display: flex
     justify-content: space-between

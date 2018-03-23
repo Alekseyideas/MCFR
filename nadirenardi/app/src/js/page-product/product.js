@@ -25,6 +25,11 @@ export const Product = device =>{
             new PopUp(btn,id,sizeChoose).show();
         });
 
+        $('.popUp__info span').click(function () {
+            new PopUp(btn,id,sizeChoose).close();
+        });
+
+
         $('.active .full-product__info-wrapper').show();
 
         $('.full-product__btn-info').click(function () {
@@ -132,6 +137,7 @@ export const Product = device =>{
         })
 
     });
+
 
 
 

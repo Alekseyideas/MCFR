@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,27 +70,112 @@
 "use strict";
 
 
-var _NewsSlider = __webpack_require__(1);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-var _header = __webpack_require__(2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _mainSlider = __webpack_require__(3);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _hitsSlider = __webpack_require__(4);
+var PopUp = exports.PopUp = function () {
+    function PopUp() {
+        var btn = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
-var _News = __webpack_require__(5);
+        var _this = this;
 
-var _stocksSlider = __webpack_require__(6);
+        var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+        var toShow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
-var _footer = __webpack_require__(7);
+        _classCallCheck(this, PopUp);
 
-var _filter = __webpack_require__(8);
+        this.id = id;
+        var body = $('body');
+        var show = toShow;
+        var popUpBody = $('.popUp__wrapper');
+        this.popUp = {
+            wrapper: $('.popUp'),
+            btn: btn,
+            btnClose: $('.popUp__close-btn'),
+            showPopUp: function showPopUp() {
+                if (show) {
+                    id.addClass('active');
 
-var _product = __webpack_require__(9);
+                    body.addClass('hidden');
+                    setTimeout(function () {
+                        id.find(popUpBody).addClass('active');
+                    }, 400);
+                }
+            },
+            closePopUp: function closePopUp() {
+                id.find(popUpBody).removeClass('active');
+                setTimeout(function () {
+                    id.removeClass('active');
+                    body.removeClass('hidden');
+                }, 600);
+            }
+        };
+
+        this.popUp.btnClose.click(function () {
+            _this.popUp.closePopUp();
+        });
+
+        this.popUp.wrapper.click(function (e) {
+            if ($(e.target).is(_this.popUp.wrapper)) {
+                _this.popUp.closePopUp();
+            }
+        });
+    }
+
+    _createClass(PopUp, [{
+        key: 'show',
+        value: function show() {
+            this.popUp.showPopUp();
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            this.popUp.closePopUp();
+        }
+    }]);
+
+    return PopUp;
+}();
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _NewsSlider = __webpack_require__(2);
+
+var _header = __webpack_require__(3);
+
+var _mainSlider = __webpack_require__(4);
+
+var _hitsSlider = __webpack_require__(5);
+
+var _News = __webpack_require__(6);
+
+var _stocksSlider = __webpack_require__(7);
+
+var _footer = __webpack_require__(8);
+
+var _filter = __webpack_require__(9);
+
+var _product = __webpack_require__(10);
 
 var _cart = __webpack_require__(11);
 
 var _article = __webpack_require__(12);
+
+var _contacts = __webpack_require__(13);
+
+var _delivery = __webpack_require__(15);
+
+var _PopUp = __webpack_require__(0);
 
 var device = '';
 
@@ -138,9 +223,27 @@ Resize(mainHeight);
 (0, _product.Product)(device);
 (0, _cart.Cart)();
 (0, _article.Article)();
+(0, _contacts.Contacs)();
+(0, _delivery.Delivery)();
+
+$(document).ready(function () {
+
+    $('.showSizes,#size-table').click(function () {
+        new _PopUp.PopUp('', $('#rozmirna-sitka')).show();
+    });
+
+    $('.header__icon--user,.header__icon--favorite').click(function () {
+        new _PopUp.PopUp('', $('#popUpEnter')).show();
+    });
+
+    $('.callPhone').click(function () {
+        new _PopUp.PopUp('', $('#callBack')).show();
+    });
+    $('.phoneNumber').mask('+0(000) 000-00-00');
+});
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -166,7 +269,7 @@ var NewsSlider = exports.NewsSlider = function NewsSlider() {
 };
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -246,7 +349,7 @@ var Header = exports.Header = function Header(device) {
 };
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -268,7 +371,7 @@ var MainSlider = exports.MainSlider = function MainSlider() {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -308,7 +411,7 @@ var HitsSlider = exports.HitsSlider = function HitsSlider() {
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -337,7 +440,7 @@ var News = exports.News = function News() {
 };
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -373,7 +476,7 @@ var StockSlider = exports.StockSlider = function StockSlider() {
 };
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -399,7 +502,7 @@ var Footer = exports.Footer = function Footer(Resize, device) {
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -428,7 +531,7 @@ var Filter = exports.Filter = function Filter(device) {
 };
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -439,7 +542,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Product = undefined;
 
-var _PopUp = __webpack_require__(10);
+var _PopUp = __webpack_require__(0);
 
 var Product = exports.Product = function Product(device) {
 
@@ -464,6 +567,10 @@ var Product = exports.Product = function Product(device) {
 
         btn.click(function () {
             new _PopUp.PopUp(btn, id, sizeChoose).show();
+        });
+
+        $('.popUp__info span').click(function () {
+            new _PopUp.PopUp(btn, id, sizeChoose).close();
         });
 
         $('.active .full-product__info-wrapper').show();
@@ -568,71 +675,6 @@ var Product = exports.Product = function Product(device) {
 };
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var PopUp = exports.PopUp = function () {
-    function PopUp() {
-        var btn = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
-        var _this = this;
-
-        var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-        var toShow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-
-        _classCallCheck(this, PopUp);
-
-        this.id = id;
-        var body = $('body');
-        var show = toShow;
-
-        this.popUp = {
-            btn: btn,
-            btnClose: $('.popUp__close-btn'),
-            showPopUp: function showPopUp() {
-                if (show) {
-                    id.addClass('active');
-                    body.addClass('hidden');
-                }
-            },
-            closePopUp: function closePopUp() {
-                id.removeClass('active');
-                body.removeClass('hidden');
-            }
-        };
-
-        this.popUp.btnClose.click(function () {
-            _this.popUp.closePopUp();
-        });
-    }
-
-    _createClass(PopUp, [{
-        key: 'show',
-        value: function show() {
-            this.popUp.showPopUp();
-        }
-    }, {
-        key: 'close',
-        value: function close() {
-            this.popUp.closePopUp();
-        }
-    }]);
-
-    return PopUp;
-}();
-
-/***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -690,6 +732,118 @@ var Article = exports.Article = function Article() {
         items: 1,
         margin: 10,
         autoHeight: true
+    });
+};
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Contacs = undefined;
+
+var _Tabs = __webpack_require__(14);
+
+var Contacs = exports.Contacs = function Contacs() {
+    new _Tabs.Tab('.tab', '.tab-info');
+
+    var wrapper = $('.shop-container__city');
+    var city = $('.shop-container__city-title');
+    var shops = $('.shop-container__shops');
+    var title = $('#curTab');
+
+    $('#curTab').text($('.tab.active').text());
+
+    $('.tab').click(function () {
+        $('#curTab').text($(this).text());
+    });
+    city.click(function () {
+
+        if (!$(this).hasClass('active')) {
+            shops.slideUp();
+            city.removeClass('active');
+        }
+        $(this).addClass('active');
+
+        $(this).parent().find(shops).slideDown();
+    });
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Tab = exports.Tab = function Tab(btn, content) {
+    _classCallCheck(this, Tab);
+
+    var button = $('' + btn);
+    var activeButton = $(btn + '.active');
+    var tab = {
+        btn: button,
+        btnData: button.data('tab'),
+        activeBtnData: activeButton.data('tab'),
+        info: content,
+        showTab: function showTab(tab, slug) {
+            $(tab + '--' + slug).addClass('active');
+        },
+        hideTab: function hideTab(tab) {
+            $('' + tab).removeClass('active');
+        }
+    };
+
+    $(tab.info + '--' + tab.activeBtnData).addClass('active');
+
+    button.click(function () {
+        button.removeClass('active');
+
+        $(this).addClass('active');
+
+        tab.hideTab(tab.info);
+
+        tab.activeBtnData = $(this).data('tab');
+
+        tab.showTab(tab.info, tab.activeBtnData);
+    });
+};
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var Delivery = exports.Delivery = function Delivery() {
+    var wrapper = $('.toggle');
+    var btn = $('.toggle__title');
+    var container = $('.toggle__text');
+
+    btn.click(function () {
+
+        if (!$(this).hasClass('active')) {
+            container.slideUp();
+            btn.removeClass('active');
+        }
+        $(this).addClass('active');
+
+        $(this).parent().find(container).slideDown();
     });
 };
 

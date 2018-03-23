@@ -1,4 +1,9 @@
 
+
+
+
+
+
 <?php include 'subscription.php' ?>
 
 <footer class="footer">

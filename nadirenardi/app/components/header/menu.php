@@ -12,7 +12,7 @@
 
         <?php $catLink = 'category.php'?>
 
-		<li><a href="<?echo $catLink?>">Магазины</a></li>
+		<li><a href="contacts.php?menu=shops">Магазины</a></li>
 		<li><a href="<?echo $catLink?>">Ws18</a></li>
 		<li><a href="<?echo $catLink?>">Marshmallow</a></li>
 		<li><a href="<?echo $catLink?>">Зима17</a></li>

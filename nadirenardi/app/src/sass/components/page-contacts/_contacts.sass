@@ -22,3 +22,113 @@
     +_media-lg-down
       width: 100%
       margin-top: 20px
+  .tab-info
+    display: none
+    &.active
+      display: block
+    &--contacts
+      &.active
+        display: flex
+        +_media-md-down
+          display: block
+      .tab-info__text
+        margin-right: 30px
+    &--shop
+      //&.active
+        //display: flex
+      .tab-info__text
+        //display: flex
+        flex-wrap: wrap
+        margin-bottom: 40px
+
+
+  &__menu
+    .tab
+      padding: 20px
+      background: #f6f6f6
+      border-bottom: 1px solid #cacaca
+      cursor: pointer
+      max-width: 340px
+      width: 100%
+      &.active
+        background: $orange
+        color: white
+        +_media-lg-up
+          &:hover
+            color: white
+            background: $orange
+      +_media-lg-down
+        max-width: 100%
+      +_media-lg-up
+        &:hover
+          background: #ededed
+  .shop-container
+    &__city-title
+      font-size: 2.6rem
+      font-weight: normal
+      text-transform: uppercase
+      margin-bottom: 10px
+      cursor: pointer
+      display: flex
+      justify-content: space-between
+      align-items: center
+      background: #f8f8f8
+      padding: 5px 25px
+      transition: $def-transition
+      &:after
+        content: '\f489'
+        font-family: Ionicons
+        font-size: 3rem
+      &.active
+        &:after
+          content: '\f462'
+
+      +_media-lg-up
+        &:hover
+          background: darken(#f8f8f8,5)
+    &__shops
+      display: none
+      justify-content: flex-start
+      flex-wrap: wrap
+      &>.flex
+        flex-wrap: wrap
+        &>div
+          width: 23%
+          padding: 0 5px
+          margin: 20px 10px
+          font-weight: normal
+          color: #5e5e5e
+          border-right: 1px solid #e2e2e2
+          &:last-child
+            border: 0
+          @media screen and (max-width: 1470px)
+            width: 30%
+          +_media-lg-down
+            width: 45%
+          +_media-xs-down
+            width: 100%
+            border: 0
+        b
+          color: black
+      .shop-facebook
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        width: 30px
+        height: 30px
+        background: #ececec
+        margin: 10px 0
+        +_media-lg-up
+          &:hover
+            background: $orange
+            color: white
+
+
+
+
+      h4
+        font-weight: 400
+        font-size: 2rem
+        color: $orange
+

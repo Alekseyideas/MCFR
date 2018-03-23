@@ -9,9 +9,11 @@
   display: none
   align-items: center
   justify-content: center
+  cursor: pointer
   &.active
     display: flex
   &__wrapper
+    cursor: default
     width: 90%
     max-height: 90vh
     overflow: auto
@@ -20,6 +22,10 @@
     background: white
     padding: 20px
     box-shadow: 0 5px 15px rgba(black,.2)
+    margin-top: -200vh
+    transition: .5s
+    &.active
+      margin-top: 0
   &__title
     font-size: 2.5rem
 
@@ -29,6 +35,19 @@
       display: flex
       align-items: center
       justify-content: center
+
+    &--enter
+      display: block
+      .popUp__body
+        +_media-xs-up
+          display: flex
+          justify-content: space-between
+      .popUp__footer
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+
   &__close-btn
     cursor: pointer
     transition: $def-transition
@@ -39,3 +58,107 @@
     +_media-lg-up
       &:hover
         color: $orange
+
+
+  input
+    border: 1px solid #e0e0e0
+    height: 44px
+    padding: 10px
+    font-weight: 300
+    font-size: 1.8rem
+  .form-group
+    margin: 10px 0
+  label
+    cursor: pointer
+    width: inherit
+    span
+      margin-left: 10px
+    +_media-lg-up
+      &:hover
+        color: $orange
+  .enter-to-shop
+    background: $def-color
+    color: white
+    width: 180px
+    height: 44px
+    font-size: 1.8rem
+    font-weight: 300
+    text-transform: uppercase
+    +_media-xs-down
+      display: none
+
+    +_media-lg-up
+      &:hover
+        background: $orange
+  .enter-form
+    width: 50%
+    +_media-xs-down
+      width: 100%
+    .enter-to-shop
+      display: block
+      width: 100%
+      margin-bottom: 30px
+      +_media-xs-up
+        display: none
+
+  .btnReg
+    display: block
+    width: 180px
+    height: 44px
+    background: $def-color
+    color: white
+    text-align: center
+    line-height: 44px
+    font-weight: 300
+    font-size: 1.8rem
+    +_media-xs-down
+      width: 100%
+    +_media-lg-up
+      &:hover
+        &:hover
+          background: $orange
+  .register-to-shop
+    width: 180px
+    background: $orange
+    height: 44px
+    color: white
+    font-size: 1.8rem
+    text-transform: uppercase
+    font-weight: 300
+    +_media-xs-down
+      width: 100%
+    +_media-lg-up
+      &:hover
+        &:hover
+          background: darken($orange,10)
+
+
+  .register__popUp
+    h3
+      +_media-xs-up
+        display: none
+
+
+
+  .oneClick-form
+    max-width: 400px
+    margin: auto
+    text-align: center
+    h3
+      color: $orange
+    p
+      font-size: 2rem
+      font-weight: 300
+      line-height: 3rem
+  .oneClick-form-btn
+    width: 180px
+    background: $def-color
+    color: white
+    height: 44px
+    font-size: 2rem
+    text-transform: uppercase
+    font-weight: 300
+    margin-top: 30px
+    +_media-lg-up
+      &:hover
+        background: $orange

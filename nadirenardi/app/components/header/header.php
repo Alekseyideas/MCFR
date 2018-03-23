@@ -8,7 +8,7 @@
 					<span class="btn-menu__line"></span>
 				</button>
 
-				<a href="#" class="header__shops flex flex--j-space">
+				<a href="contacts.php?menu=shops" class="header__shops flex flex--j-space">
 					<span class="header__shops-text">Магазины</span>
 					<span class="header__shops-icon">
                         <i class="fas fa-map-marker-alt"></i>
@@ -29,15 +29,15 @@
 			</div>
 			<div class="col-xs-4">
 				<a href="/" class="header__logo">
-					<img src="assets/img/logos/old-logo.svg" alt="old-logo">
+					<img src="assets/img/logos/logo.svg" alt="old-logo">
 				</a>
 			</div>
 			<div class="col-xs-4 flex flex--j-right">
 				<div class="header__right-side flex flex--a-center flex--j-space">
-					<a href="#" class="header__icon">
+					<a href="#" class="header__icon header__icon--user">
 						<i class="far fa-user"></i>
 					</a>
-					<a href="#" class="header__icon">
+					<a href="#" class="header__icon header__icon--favorite">
 						<i class="far fa-heart"></i>
 					</a>
 					<a href="cart.php" class="header__icon header__icon--cart">

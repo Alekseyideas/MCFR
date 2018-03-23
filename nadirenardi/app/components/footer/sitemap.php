@@ -24,10 +24,10 @@
 			</h2>
 			<div class="site-map__secIn">
 				<ul>
-					<li><a href="#">О нас</a></li>
-					<li><a href="#">Блог Лисички</a></li>
-					<li><a href="#">Где купить</a></li>
-					<li><a href="#">Сотрудничество</a></li>
+					<li><a href="about.php">О нас</a></li>
+					<li><a href="blog.php">Блог Лисички</a></li>
+					<li><a href="contacts.php?menu=shops">Где купить</a></li>
+					<li><a href="contacts.php?menu=cooperation">Сотрудничество</a></li>
 				</ul>
 			</div>
 		</div>
@@ -37,9 +37,9 @@
 			</h2>
 			<div class="site-map__secIn">
 				<ul>
-					<li><a href="#">Оплата и доставка</a></li>
-					<li><a href="#">Обмен и возврат</a></li>
-					<li><a href="#">Размерная сетка</a></li>
+					<li><a href="delivery.php">Оплата и доставка</a></li>
+					<li><a href="return.php">Обмен и возврат</a></li>
+					<li><a href="javascript:void(0)" class="showSizes">Размерная сетка</a></li>
 					<li><a href="#">Как получить скидку</a></li>
 				</ul>
 			</div>

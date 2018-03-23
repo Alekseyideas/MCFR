@@ -111,7 +111,7 @@
 					</div>
 					<div class="full-product__buy-btns">
 						<a href="javascript:void(0)" class="full-product__btn-addToCart"><i class="ion-ios-cart"></i><span>Додати до кошика</span></a>
-						<a href="javascript:void(0)" class="full-product__btn-call"><i class="far fa-hand-pointer"></i> <span>Купить в 1 клик</span></a>
+						<a href="javascript:void(0)" class="full-product__btn-call callPhone"><i class="far fa-hand-pointer"></i> <span>Купить в 1 клик</span></a>
 					</div>
 
 
@@ -173,21 +173,6 @@
 
 
 
-
-   <?php include 'components/popUps/size-PopUp.php'?>
-
-
-
-<?php include 'components/footer/footer.php' ?>
-<?php include 'components/scripts.php' ?>
-
-
-
-
-
-
-
-
 <script type="text/jsx">
 
     class Size extends React.Component{
@@ -218,7 +203,13 @@
                 </label>
             });
 
-            const popUp = <?php PopUpFunc('popSizes','Укажите размер',   '{sizes}')?> + '';
+            const popUp = <div class="popUp" id="popSizes">
+                <div class="popUp__wrapper">
+                    <div class="popUp__close-btn"><i class="ion-close"></i></div>
+                    <h2 class="popUp__title">Укажите размер</h2>
+                    <div class="popUp__info">{sizes}</div>
+                </div>
+            </div>;
 
 
             return <div>
@@ -235,3 +226,13 @@
         document.getElementById('sizes')
     );
 </script>
+
+
+
+
+<?php include 'components/footer/footer.php' ?>
+<?php include 'components/scripts.php' ?>
+
+
+
+
