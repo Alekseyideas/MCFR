@@ -1,4 +1,5 @@
 .page-cart
+
   &__wrapper
     display: flex
     align-items: flex-start
@@ -96,6 +97,9 @@
               display: block
               width: 100%
             +_media-xs-up
+              span
+                &:first-child
+                  display: none
               .text
                 display: none
             +_media-lg-down

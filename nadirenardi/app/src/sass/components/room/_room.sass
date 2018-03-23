@@ -1,0 +1,138 @@
+.room
+  margin-bottom: 40px
+  &__wrapper
+    display: block
+    +_media-md-up
+      display: flex
+  &__left
+    width: 100%
+    +_media-md-up
+      width: 20%
+  &__right
+    width: 100%
+    +_media-md-up
+      width: 80%
+      padding-left: 20px
+
+  .tab
+    padding: 10px
+    border-left: 4px solid #dcdcdc
+    margin: 10px 0
+    font-size: 2rem
+    font-weight: 300
+    transition: $def-transition
+    +_media-lg-up
+      &:hover
+        border-left: 4px solid $orange
+    &.active
+      border-left: 4px solid $orange
+
+  &__cart-price
+    display: flex
+    justify-content: space-between
+    padding: 20px 10px
+    background: #f7f7f7
+    margin: 20px 0
+  &__cart-price-title
+    font-size: 2rem
+  &__cart-price-val
+    font-size: 3rem
+  &__cart-btns
+    display: flex
+    justify-content: flex-end
+    +_media-sm-down
+      display: block
+  &__cart-btn
+    background: $def-color
+    color: white
+    height: 44px
+    line-height: 44px
+    padding: 0 40px
+    margin-left: 10px
+    text-transform: uppercase
+    font-size: 1.8rem
+    font-weight: 300
+    display: block
+    text-align: center
+    +_media-sm-down
+      margin: 20px 0
+      height: 50px
+      line-height: 50px
+    +_media-lg-up
+      &:hover
+        background: $orange
+        color: white
+    &--orange
+      background:  $orange
+      +_media-lg-up
+        &:hover
+          background: darken($orange,10)
+
+  &__registration-form
+    .form-group
+      display: flex
+      justify-content: space-between
+      align-items: center
+      max-width: 600px
+      margin: 10px 0
+      border-bottom: 1px solid #f2f2f2
+      position: relative
+      label.error
+          position: absolute
+          right: 0
+          top: -10px
+          color: red
+    &:last-child
+        align-items: flex-start
+        .room__name-field
+          margin-top: 20px
+
+    input
+      max-width: 350px
+      padding: 10px
+      width: 100%
+      border: 1px solid #e0e0e0
+      margin: 10px 0
+    .passInputs
+      width: 100%
+      max-width: 350px
+    .default-checkbox
+      width: initial
+    label
+      margin: 0
+      cursor: pointer
+      max-width: 200px
+      input
+        margin-right: 5px
+
+    .room-btn-registration
+      height: 44px
+      background: $orange
+      margin: 10px 0
+      padding: 0 20px
+      color: white
+    .reg__footer
+      max-width: 600px
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+  .rem-pass
+    .form-group
+      margin: 20px 0
+      display: flex
+      width: 100%
+      align-items: center
+      input
+        margin-left: 10px
+        max-width: 200px
+        border: 1px solid #e0e0e0
+    .rem-pass-text
+      display: block
+    .btn-rem-pass
+      background: $orange
+      color: white
+      width: 120px
+      height: 44px
+

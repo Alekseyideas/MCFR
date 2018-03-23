@@ -76,6 +76,7 @@ PopUpFunc('callBack','КУПИТИ В 1 КЛІК',$popUpContent)
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="assets/js/bundle.js?<?echo rand()?>"></script>
 <script src="assets/js/edit.js?<?echo rand()?>"></script>
 

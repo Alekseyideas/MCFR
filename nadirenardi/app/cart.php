@@ -97,7 +97,7 @@
 						<input type="text" placeholder="Область">
 						<input type="text" placeholder="Город">
 						<input type="text" placeholder="Отделение">
-						<input type="text" placeholder="Номер телефона">
+						<input type="text" placeholder="Номер телефона" class="phoneNumber">
 					</div>
 				</div>
 
