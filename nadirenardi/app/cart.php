@@ -75,6 +75,9 @@
 					<div class="page-cart__info-fields">
 						<input type="text" placeholder="Улица">
 						<input type="text" placeholder="Дом/квартира">
+                        <div class="page-cart__info-fields">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Коментарий"></textarea>
+                        </div>
 					</div>
 				</div>
 
@@ -98,6 +101,9 @@
 						<input type="text" placeholder="Город">
 						<input type="text" placeholder="Отделение">
 						<input type="text" placeholder="Номер телефона" class="phoneNumber">
+                        <div class="page-cart__info-fields">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Коментарий"></textarea>
+                        </div>
 					</div>
 				</div>
 

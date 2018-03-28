@@ -571,7 +571,7 @@ var Product = exports.Product = function Product(device) {
 
     $('.full-product__slider').slick({
         vertical: true,
-        infinite: false,
+        infinite: true,
         slidesToShow: 3,
         verticalSwiping: true,
         prevArrow: '<button type="button" class="prev"><i class="ion-ios-arrow-up"></i></button>',
@@ -655,10 +655,17 @@ var Product = exports.Product = function Product(device) {
         }
 
         var img = $('.clickable');
+
+        var num = img.map(function () {
+            return $(this).data('pos');
+        });
+
+        var highest = Math.max.apply(Math, num);
+
         var image = {
             container: $('.full-product__imgs'),
             btn: img,
-            count: img.length,
+            count: highest,
             wrap: $('.full-product__large-photo img'),
             btnPrev: $('.prev-photo'),
             btnNext: $('.next-photo'),
@@ -679,14 +686,14 @@ var Product = exports.Product = function Product(device) {
 
         image.btnNext.click(function () {
             image.current++;
-            if (image.current === image.count - 1) {
+            if (image.current === image.count + 1) {
                 image.current = 1;
             }
             image.changeImage(image.current);
         });
         image.btnPrev.click(function () {
             image.current--;
-            if (image.current === 0) image.current = image.count - 2;
+            if (image.current === 0) image.current = image.count;
 
             image.changeImage(image.current);
         });

@@ -62,7 +62,7 @@
                     </div>
 
 
-                    <h2 class="section-title">ПРОСМОТРЕННЫЕ ТОВАРЫ</h2>
+                    <h2 class="section-title section-title--seen">ПРОСМОТРЕННЫЕ ТОВАРЫ</h2>
                     <div class="may-like owl-carousel">
 						<?php include 'components/base/product.php'?>
 						<?php include 'components/base/product.php'?>
@@ -118,7 +118,35 @@
                     <div class="full-product__info active">
                         <div class="full-product__btn-info"><span>Описание</span></div>
                         <div class="full-product__info-wrapper">
-                            <p>Романтичное платье из костюмной итальянской ткани белого цвета, свободного кроя, с юбкой на сборке длиной до середины икры, с завышенной талией и длинными свободными рукавами, с элегантной планкой и пуговицами на груди и маленьким воротничком.</p>
+                            <p>
+
+                                <b>SIZE & FIT</b></p>
+                                <ul class="square">
+                                    <li>Fully lined</li>
+                                    <li>Halter neck</li>
+                                    <li>Adjustable cami straps</li>
+                                    <li>You're in control</li>
+                                    <li>Ruffle overlay</li>
+                                    <li>Zip-back fastening</li>
+                                    <li>Regular cut</li>
+                                    <li>Fits you just right</li>
+                                    <li>Midi dress length between: 115-130cm</li>
+                                </ul><br>
+                            <p>
+                                    <b>SIZE & FIT</b> <br>
+                                Model wears: UK 8/ EU 36/ US 4<br>
+                                Model's height: 173cm/5'8”
+                                 <br>
+                                 <br>
+                                <b>LOOK AFTER ME</b><br>
+                                Machine wash  <br>
+                                Always read the label  <br>
+                                Check it before you wreck it  <br> <br>
+                                <b>ABOUT ME</b><br>
+                                Textured woven fabric<br>
+                                The kind that doesn't stretch<br>
+
+                            </p>
                         </div>
 
                     </div>

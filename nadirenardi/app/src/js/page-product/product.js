@@ -4,7 +4,7 @@ export const Product = device =>{
 
     $('.full-product__slider').slick({
         vertical: true,
-        infinite: false,
+        infinite: true,
         slidesToShow: 3,
         verticalSwiping: true,
         prevArrow: '<button type="button" class="prev"><i class="ion-ios-arrow-up"></i></button>',
@@ -94,10 +94,19 @@ export const Product = device =>{
         }
 
         const img = $('.clickable');
+
+
+        const num = img.map(function (){
+            return $(this).data('pos');
+        });
+
+        const highest = Math.max.apply(Math, num);
+
+
         const image = {
             container: $('.full-product__imgs'),
             btn:   img,
-            count:  img.length,
+            count: highest,
             wrap: $('.full-product__large-photo img'),
             btnPrev: $('.prev-photo'),
             btnNext: $('.next-photo'),
@@ -118,7 +127,7 @@ export const Product = device =>{
 
         image.btnNext.click(()=>{
             image.current++;
-            if( image.current === image.count-1){
+            if( image.current === image.count+1){
                 image.current = 1
             }
             image.changeImage(image.current);
@@ -127,7 +136,7 @@ export const Product = device =>{
         image.btnPrev.click(function () {
             image.current--;
             if (image.current===0)
-                image.current = image.count-2;
+                image.current = image.count;
 
             image.changeImage(image.current);
         });

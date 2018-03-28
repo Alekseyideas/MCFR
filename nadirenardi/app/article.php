@@ -7,7 +7,7 @@
 			<div class="full-article__left">
 				<div class="full-article__header">
 					<span>15.02.2018</span>
-					<a href="blog.php" >Блог</a>
+					<!--<a href="blog.php" >Блог</a>-->
 				</div>
 				<h2 class="section-title">Q&A: спецпроект Nadi Renardi до Дня святого Валентина</h2>
 
