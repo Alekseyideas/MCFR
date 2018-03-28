@@ -2064,9 +2064,12 @@ ul.square li {
   .full-product__info-wrapper {
     display: none;
     font-size: 1.8rem;
+    color: black;
     line-height: 3rem;
-    font-weight: normal;
+    font-weight: 300;
     padding-left: 15px; }
+    .full-product__info-wrapper b {
+      font-weight: 300; }
     .full-product__info-wrapper ul li {
       list-style: disc;
       margin: 3px 0 3px 20px; }
@@ -2640,12 +2643,10 @@ ul.square li {
     max-width: 340px;
     width: 100%; }
     .contacts__menu .tab.active {
-      background: #fc4d29;
-      color: white; }
+      color: #fc4d29; }
       @media screen and (min-width: 1200px) {
         .contacts__menu .tab.active:hover {
-          color: white;
-          background: #fc4d29; } }
+          color: #fc4d29; } }
     @media screen and (max-width: 1199.98px) {
       .contacts__menu .tab {
         max-width: 100%; } }

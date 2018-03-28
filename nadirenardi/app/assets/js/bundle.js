@@ -572,10 +572,16 @@ var Product = exports.Product = function Product(device) {
     $('.full-product__slider').slick({
         vertical: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         verticalSwiping: true,
         prevArrow: '<button type="button" class="prev"><i class="ion-ios-arrow-up"></i></button>',
-        nextArrow: '<button type="button" class="next"><i class="ion-ios-arrow-down"></i></button>'
+        nextArrow: '<button type="button" class="next"><i class="ion-ios-arrow-down"></i></button>',
+        responsive: [{
+            breakpoint: 1850,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
     });
 
     $(document).ready(function () {
